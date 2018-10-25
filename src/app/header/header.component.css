@@ -2,10 +2,11 @@
     /* background-color: #3e98dc; */
     background-color: #58c8f5;
 }
-.navbar-brand {
+
+a {
     color: #ddd;
 }
 
-.navbar-brand:hover {
-    color: #fff;
+a:hover {
+    color: #7289a5;
 }
