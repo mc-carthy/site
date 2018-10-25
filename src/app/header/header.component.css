@@ -1,12 +1,17 @@
+
 .navbar {
-    /* background-color: #3e98dc; */
     background-color: #58c8f5;
 }
 
 a {
-    color: #ddd;
+    color: #eee;
 }
 
 a:hover {
     color: #7289a5;
+}
+
+.active {
+    background-color: #eee;
+    color: #58c8f5;
 }
