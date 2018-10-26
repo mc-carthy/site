@@ -12,12 +12,10 @@ const appRoutes: Routes = [
 ];
 
 @NgModule({
-    imports: [
-        RouterModule.forRoot(appRoutes)
-        
+    imports: [        
         // Only to be used if we cannot configure our server
         // to return our index.html page in the event of a 404
-        // RouterModule.forRoot(appRoutes, { useHash: true })
+        RouterModule.forRoot(appRoutes, { useHash: true })
     ],
     exports: [RouterModule]
 })
