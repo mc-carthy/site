@@ -7,8 +7,12 @@ import { HomeComponent } from './home/home.component';
 import { HeaderComponent } from './header/header.component';
 import { FooterComponent } from './footer/footer.component';
 import { UnderConstructionComponent } from './under-construction/under-construction.component';
-import { BlogComponent } from './blog/blog.component';
 import { CvComponent } from './cv/cv.component';
+import { BlogComponent } from './blog/blog.component';
+import { BlogListComponent } from './blog/blog-list/blog-list.component';
+import { BlogEntryComponent } from './blog/blog-entry/blog-entry.component';
+import { BlogSearchFormComponent } from './blog/blog-search-form/blog-search-form.component';
+import { BlogService } from './blog/blog.service';
 
 @NgModule({
   declarations: [
@@ -18,13 +22,16 @@ import { CvComponent } from './cv/cv.component';
     UnderConstructionComponent,
     BlogComponent,
     CvComponent,
-    HomeComponent
+    HomeComponent,
+    BlogListComponent,
+    BlogEntryComponent,
+    BlogSearchFormComponent
   ],
   imports: [
     BrowserModule,
     AppRoutingModule
   ],
-  providers: [],
+  providers: [BlogService],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
