@@ -19,4 +19,8 @@ export class BlogService {
     getBlogs() {
         return this.blogs.slice();
     }
+
+    addBlog(blog: Blog) {
+        this.blogs.push(blog);
+    }
 }

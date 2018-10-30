@@ -3,10 +3,12 @@ import { Routes, RouterModule } from '@angular/router';
 import { HomeComponent } from './home/home.component';
 import { CvComponent } from './cv/cv.component';
 import { BlogComponent } from './blog/blog.component';
+import { NewBlogComponent } from './blog/new-blog/new-blog.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'blog', component: BlogComponent },
+    { path: 'blog/new', component: NewBlogComponent },
     { path: 'cv', component: CvComponent },
     { path: '**', redirectTo: '/' }
 ];

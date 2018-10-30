@@ -13,6 +13,7 @@ import { BlogListComponent } from './blog/blog-list/blog-list.component';
 import { BlogEntryComponent } from './blog/blog-entry/blog-entry.component';
 import { BlogSearchFormComponent } from './blog/blog-search-form/blog-search-form.component';
 import { BlogService } from './blog/blog.service';
+import { NewBlogComponent } from './blog/new-blog/new-blog.component';
 
 @NgModule({
   declarations: [
@@ -25,7 +26,8 @@ import { BlogService } from './blog/blog.service';
     HomeComponent,
     BlogListComponent,
     BlogEntryComponent,
-    BlogSearchFormComponent
+    BlogSearchFormComponent,
+    NewBlogComponent
   ],
   imports: [
     BrowserModule,
