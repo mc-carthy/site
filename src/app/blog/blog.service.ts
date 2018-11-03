@@ -5,13 +5,13 @@ export class BlogService {
         new Blog(
             'Blog title 1',
             'This is a test blog body',
-            ['Testing'],
+            'Testing',
             Date.now()
         ),
         new Blog(
             'Blog title 2',
             'This is another test blog body',
-            ['Also testing'],
+            'Also testing',
             Date.now()
         )
     ];
