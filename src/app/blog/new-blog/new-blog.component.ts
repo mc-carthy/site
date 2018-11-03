@@ -14,7 +14,7 @@ export class NewBlogComponent implements OnInit {
     blogForm: FormGroup;
     editMode = false;
 
-    constructor(private router: Router ,private blogService: BlogService) { }
+    constructor(private router: Router, private blogService: BlogService) { }
 
     ngOnInit() {
         this.initForm();
@@ -28,7 +28,7 @@ export class NewBlogComponent implements OnInit {
             'title': new FormControl(title),
             'body': new FormControl(content),
             'tags': new FormControl(tags)
-        })
+        });
     }
 
     onSubmit() {
