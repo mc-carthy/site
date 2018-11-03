@@ -7,16 +7,6 @@ h1 {
     color: #eeeeee;
 }
 
-html {
-    position: relative;
-    min-height: 100%;
-}
-
-body {
-    /* Margin bottom by footer height */
-    margin-bottom: 60px;
-}
-
 .navbar {
     background-color: #536274;
 }
@@ -34,12 +24,12 @@ a:hover {
     color: #eee;
 }
 
-a > i.fa-github {
+a>i.fa-github {
     margin: 10px 0;
     color: #ddd;
 }
 
-a > i.fa-github:hover {
+a>i.fa-github:hover {
     margin: 10px 0;
     color: #fff;
 }
@@ -48,17 +38,38 @@ p {
     margin: 20px 0;
 }
 
-.footer {
+label {
+    color: #eee;
+}
+
+* {
+    box-sizing: border-box;
+}
+
+*:before, *:after {
+    box-sizing: border-box;
+}
+
+html, body {
+    height: 100%;
+    position: relative;
+}
+
+.content {
+    min-height: 100vh;
+    /* will cover the 100% of viewport */
+    overflow: hidden;
+    display: block;
+    position: relative;
+    padding-bottom: 60px;
+    /* height of your footer */
+}
+
+footer {
     position: absolute;
     bottom: 0;
     width: 100%;
-    /* Set the fixed height of the footer here */
     height: 60px;
-    /* background-color: #3e98dc; */
     background-color: #536274;
     color: #ddd;
-}
-
-label {
-    color: #eee;
 }
