@@ -1,5 +1,5 @@
 import { Component, OnInit, Input } from '@angular/core';
-import { ProjectListItem } from '../project-list-item.model';
+import { Project } from '../project.model';
 
 @Component({
     selector: 'app-project-list-item',
@@ -8,7 +8,7 @@ import { ProjectListItem } from '../project-list-item.model';
 })
 export class ProjectListItemComponent implements OnInit {
 
-    @Input() listItem: ProjectListItem;
+    @Input() listItem: Project;
 
     constructor() { }
 
