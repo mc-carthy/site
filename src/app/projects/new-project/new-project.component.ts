@@ -24,13 +24,15 @@ export class NewProjectComponent implements OnInit {
         let title = '';
         let summary = '';
         let content = '';
-        let imagePath= '';
-        let tags = '';
+        let imagePath = '';
+        let url = '';
+        let tags = [''];
         this.projectForm = new FormGroup({
             'title': new FormControl(title),
             'summary': new FormControl(summary),
             'body': new FormControl(content),
             'imagePath': new FormControl(imagePath),
+            'url': new FormControl(url),
             'tags': new FormControl(tags)
         });
     }
@@ -41,6 +43,7 @@ export class NewProjectComponent implements OnInit {
             this.projectForm.value['summary'],
             this.projectForm.value['content'],
             this.projectForm.value['imagePath'],
+            this.projectForm.value['url'],
             this.projectForm.value['tags'],
         );
         this.projectService.addProject(project);
