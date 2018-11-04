@@ -29,4 +29,8 @@ export class BlogService {
     addBlog(blog: Blog) {
         this.blogs.push(blog);
     }
+
+    deleteBlog(index: number) {
+        this.blogs.splice(index, 1);
+    }
 }

@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { Params, ActivatedRoute } from '@angular/router';
+import { Params, ActivatedRoute, Router } from '@angular/router';
 import { Blog } from './../blog.model';
 import { BlogService } from './../blog.service';
 
@@ -13,7 +13,7 @@ export class BlogEntryComponent implements OnInit {
     id: number;
     blog: Blog;
 
-    constructor(private route: ActivatedRoute, private blogService: BlogService) { }
+    constructor(private route: ActivatedRoute, private router: Router, private blogService: BlogService) { }
 
     ngOnInit() {
         this.route.params.subscribe(
@@ -24,4 +24,10 @@ export class BlogEntryComponent implements OnInit {
         );
     }
 
+    onDelete() {
+        if (confirm('Are you sure you want to delete this blog entry?')) {
+            this.blogService.deleteBlog(this.id);
+            this.router.navigate(['/blogs']);
+        }
+    }
 }
