@@ -2,7 +2,7 @@
     <div class="panel panel-default">
         <div class="panel-heading">{{ blog.title }}</div>
         <div class="panel-body">
-            {{ blog.body }}
+            <markdown ngPreserveWhitespaces [data]="blog.body"></markdown>
         </div>
         <div class="panel-footer">{{ blog.createdAt | date: 'medium' }}</div>
     </div>

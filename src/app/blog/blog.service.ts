@@ -5,7 +5,13 @@ export class BlogService {
         new Blog(
             'Blog title 1',
             'This is a test Angular blog summary',
-            'This is a test Angular blog body, it is a lot longer than the summary',
+            `
+            ## This is a test Angular blog body, it is a lot longer than the summary. This text was turned into a H2 equivalent with MarkDown
+            
+            ### This text is a little smaller
+
+            
+            `,
             ['Angular', 'TypeScript'],
             Date.now()
         ),

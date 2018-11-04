@@ -1,6 +1,7 @@
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 
 import { AppComponent } from './app.component';
@@ -45,6 +46,7 @@ import { FilterArrayPipe } from './shared/filter-array.pipe';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    MarkdownModule.forRoot(),
     AppRoutingModule
   ],
   providers: [BlogService, ProjectsService],

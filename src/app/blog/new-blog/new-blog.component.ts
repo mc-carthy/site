@@ -13,6 +13,7 @@ export class NewBlogComponent implements OnInit {
 
     blogForm: FormGroup;
     editMode = false;
+    markdownPreview = '';
 
     constructor(private router: Router, private blogService: BlogService) { }
 
