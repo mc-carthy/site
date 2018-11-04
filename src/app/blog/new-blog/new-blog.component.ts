@@ -1,5 +1,5 @@
 import { Component, OnInit } from '@angular/core';
-import { FormGroup, FormControl } from '@angular/forms';
+import { FormGroup, FormControl, FormArray } from '@angular/forms';
 import { Router } from '@angular/router';
 import { BlogService } from './../blog.service';
 import { Blog } from './../blog.model';
@@ -22,11 +22,13 @@ export class NewBlogComponent implements OnInit {
 
     private initForm() {
         let title = '';
-        let content = '';
+        let summary = '';
+        let body = '';
         let tags = '';
         this.blogForm = new FormGroup({
             'title': new FormControl(title),
-            'body': new FormControl(content),
+            'summary': new FormControl(summary),
+            'body': new FormControl(body),
             'tags': new FormControl(tags)
         });
     }
@@ -34,13 +36,26 @@ export class NewBlogComponent implements OnInit {
     onSubmit() {
         const blog = new Blog(
             this.blogForm.value['title'],
+            this.blogForm.value['summary'],
             this.blogForm.value['body'],
-            this.blogForm.value['body'],
-            this.blogForm.value['tags'],
+            this.blogForm.value['tags'].split(','),
             Date.now()
         );
+        console.log(this.blogForm);
         this.blogService.addBlog(blog);
         this.router.navigate(['/blogs']);
     }
+
+    // onAddTag() {
+    //     (<FormArray>this.blogForm.get('tags')).push(
+    //         new FormGroup({
+    //             'tag': new FormControl(null)
+    //         })
+    //     );
+    // }
+
+    // onDeleteTag(index: number) {
+    //     (<FormArray>this.blogForm.get('tags')).removeAt(index);
+    // }
 
 }

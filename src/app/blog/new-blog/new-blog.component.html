@@ -10,6 +10,17 @@
             >
         </div>
         <div class="form-group">
+            <label for="body">Summary</label>
+            <textarea 
+                formControlName="summary"
+                name="summary"
+                id="summary" 
+                cols="30" 
+                rows="4" 
+                class="form-control"
+            ></textarea>
+        </div>
+        <div class="form-group">
             <label for="body">Content</label>
             <textarea 
                 formControlName="body"
@@ -20,15 +31,23 @@
                 class="form-control"
             ></textarea>
         </div>
+        
         <div class="form-group">
             <label for="tags">Tags</label>
-            <input 
-                formControlName="tags"
-                type="text" 
-                class="form-control" 
-                id="tags"
-            >
+            <div class="row">
+                <div class="col-xs-12">
+                    <input 
+                        formControlName="tags"
+                        type="text" 
+                        class="form-control" 
+                        id="tags"
+                        style="margin-bottom: 10px"
+                        placeholder="Pass tags as comma seperated values"
+                    >
+                </div>
+            </div>
         </div>
+        <hr>
         <button type="submit" class="btn btn-primary">Save</button>
     </form>
 </div>
