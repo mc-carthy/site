@@ -35,6 +35,7 @@ export class NewBlogComponent implements OnInit {
         const blog = new Blog(
             this.blogForm.value['title'],
             this.blogForm.value['body'],
+            this.blogForm.value['body'],
             this.blogForm.value['tags'],
             Date.now()
         );
