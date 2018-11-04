@@ -21,6 +21,8 @@ import { ProjectSearchFormComponent } from './projects/project-search-form/proje
 import { NewProjectComponent } from './projects/new-project/new-project.component';
 import { ProjectsService } from './projects/projects.service';
 import { BlogListItemComponent } from './blog/blog-list-item/blog-list-item.component';
+import { FilterPipe } from './shared/filter.pipe';
+import { FilterArrayPipe } from './shared/filter-array.pipe';
 
 @NgModule({
   declarations: [
@@ -40,6 +42,8 @@ import { BlogListItemComponent } from './blog/blog-list-item/blog-list-item.comp
     ProjectSearchFormComponent,
     NewProjectComponent,
     BlogListItemComponent,
+    FilterPipe,
+    FilterArrayPipe
   ],
   imports: [
     BrowserModule,

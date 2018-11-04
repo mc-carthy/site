@@ -9,12 +9,15 @@ import { BlogService } from './../blog.service';
 })
 export class BlogListComponent implements OnInit {
 
-    blogs: Blog[]
-    tagFilter: string;
+    blogs: Blog[];
+    searchFilter: '';
+    tagFilter: '';
 
     constructor(private blogService: BlogService) { }
 
     ngOnInit() {
+        this.searchFilter = '';
+        this.tagFilter = '';
         this.blogs = this.blogService.getBlogs();
     }
 
