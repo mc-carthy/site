@@ -17,7 +17,6 @@ import { NewBlogComponent } from './blog/new-blog/new-blog.component';
 import { ProjectListComponent } from './projects/project-list/project-list.component';
 import { ProjectListItemComponent } from './projects/project-list-item/project-list-item.component';
 import { ProjectEntryComponent } from './projects/project-entry/project-entry.component';
-import { ProjectSearchFormComponent } from './projects/project-search-form/project-search-form.component';
 import { NewProjectComponent } from './projects/new-project/new-project.component';
 import { ProjectsService } from './projects/projects.service';
 import { BlogListItemComponent } from './blog/blog-list-item/blog-list-item.component';
@@ -39,7 +38,6 @@ import { FilterArrayPipe } from './shared/filter-array.pipe';
     ProjectListComponent,
     ProjectListItemComponent,
     ProjectEntryComponent,
-    ProjectSearchFormComponent,
     NewProjectComponent,
     BlogListItemComponent,
     FilterPipe,
