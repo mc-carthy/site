@@ -12,7 +12,6 @@ import { CvComponent } from './cv/cv.component';
 import { BlogComponent } from './blog/blog.component';
 import { BlogListComponent } from './blog/blog-list/blog-list.component';
 import { BlogEntryComponent } from './blog/blog-entry/blog-entry.component';
-import { BlogSearchFormComponent } from './blog/blog-search-form/blog-search-form.component';
 import { BlogService } from './blog/blog.service';
 import { NewBlogComponent } from './blog/new-blog/new-blog.component';
 import { ProjectListComponent } from './projects/project-list/project-list.component';
@@ -34,14 +33,13 @@ import { BlogListItemComponent } from './blog/blog-list-item/blog-list-item.comp
     HomeComponent,
     BlogListComponent,
     BlogEntryComponent,
-    BlogSearchFormComponent,
     NewBlogComponent,
     ProjectListComponent,
     ProjectListItemComponent,
     ProjectEntryComponent,
     ProjectSearchFormComponent,
     NewProjectComponent,
-    BlogListItemComponent
+    BlogListItemComponent,
   ],
   imports: [
     BrowserModule,

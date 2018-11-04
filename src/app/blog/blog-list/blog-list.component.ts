@@ -10,6 +10,7 @@ import { BlogService } from './../blog.service';
 export class BlogListComponent implements OnInit {
 
     blogs: Blog[]
+    tagFilter: string;
 
     constructor(private blogService: BlogService) { }
 
