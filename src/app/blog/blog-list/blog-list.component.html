@@ -3,9 +3,10 @@
         <button class="btn btn-info" routerLink="/blogs/new">New Blog Entry</button>
     </div>
 </div>
-<br>
+<hr>
 <div class="row">
     <div class="form-group col-xs-12 col-sm-8">
+        <label for="tagFilter">Search by title</label>
         <input 
             [(ngModel)]="searchFilter"
             type="text"
@@ -15,8 +16,9 @@
         >
     </div>
     <div class="form-group col-xs-12 col-sm-4">
+        <label for="tagFilter">Filter by tag</label>
         <select class="form-control" id="tagFilter" [(ngModel)]="tagFilter">
-            <option value="*">All blogs</option>
+            <option value="*">All tags</option>
             <option value="Angular">Angular</option>
             <option value="LÖVE">LÖVE</option>
             <option value="Lua">Lua</option>

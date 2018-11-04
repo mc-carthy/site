@@ -10,10 +10,14 @@ import { Component, OnInit } from '@angular/core';
 export class ProjectListComponent implements OnInit {
 
     projects: Project[];
-
+    searchFilter = '';
+    tagFilter = '';
+    
     constructor(private projectsService: ProjectsService) { }
-
+    
     ngOnInit() {
+        this.searchFilter = '';
+        this.tagFilter = '';
         this.projects = this.projectsService.getProjects();
     }
 

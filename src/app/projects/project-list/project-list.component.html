@@ -1,7 +1,35 @@
-<div class="col-md-10 col-md-offset-1">
-    <app-project-search-form></app-project-search-form>
-<hr>
-<div class="col-xs-12 col-md-6" *ngFor="let project of projects">
-    <app-project-list-item [listItem]="project"></app-project-list-item>
-</div>
+<div class="container">
+    <div class="row">
+        <div class="col-xs-12">
+            <button class="btn btn-info" routerLink="/projects/new">New Project Entry</button>
+        </div>
+    </div>
+    <hr>
+    <div class="row">
+        <div class="form-group col-xs-12 col-sm-8">
+                <label for="tagFilter">Search by title</label>
+                <input 
+                    [(ngModel)]="searchFilter"
+                    type="text"
+                    class="form-control" 
+                    id="search" 
+                    placeholder="Search"
+                >
+            </div>
+        <div class="form-group col-xs-12 col-sm-4">
+            <label for="tagFilter">Filter by tag:</label>
+            <select class="form-control" id="tagFilter" [(ngModel)]="tagFilter">
+                <option>Angular</option>
+                <option>C#</option>
+                <option>LÖVE</option>
+                <option>Lua</option>
+                <option>TypeScript</option>
+                <option>Unity</option>
+            </select>
+        </div>
+    </div>
+    <hr>
+    <div class="col-xs-12 col-md-6" *ngFor="let project of projects | filter:searchFilter:'title' | filterArray:tagFilter:'tags'">
+        <app-project-list-item [listItem]="project"></app-project-list-item>
+    </div>  
 </div>
