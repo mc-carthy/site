@@ -3,15 +3,15 @@ export class Project {
     public title: string;
     public summary: string;
     public content: string;
-    public tags: string[];
     public imagePath: string;
+    public tags: string[];
 
-    constructor(title: string, summary: string, content: string, tags: string[], imagePath: string) {
+    constructor(title: string, summary: string, content: string, imagePath: string, tags: string[]) {
         // this.id = id;
         this.title = title;
         this.summary = summary;
         this.content = content;
-        this.tags = tags;
         this.imagePath = imagePath;
+        this.tags = tags;
     }
 }
