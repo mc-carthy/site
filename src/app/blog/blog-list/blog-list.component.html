@@ -1,1 +1,6 @@
-<app-blog-entry *ngFor="let blog of blogs" [blog]="blog"></app-blog-entry>
+<app-blog-list-item 
+    *ngFor="let blog of blogs; let i = index" 
+    [routerLink]="['/blogs', i]" 
+    [blog]="blog"
+    style="cursor: pointer;"
+></app-blog-list-item>

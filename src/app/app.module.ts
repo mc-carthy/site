@@ -21,6 +21,7 @@ import { ProjectEntryComponent } from './projects/project-entry/project-entry.co
 import { ProjectSearchFormComponent } from './projects/project-search-form/project-search-form.component';
 import { NewProjectComponent } from './projects/new-project/new-project.component';
 import { ProjectsService } from './projects/projects.service';
+import { BlogListItemComponent } from './blog/blog-list-item/blog-list-item.component';
 
 @NgModule({
   declarations: [
@@ -39,7 +40,8 @@ import { ProjectsService } from './projects/projects.service';
     ProjectListItemComponent,
     ProjectEntryComponent,
     ProjectSearchFormComponent,
-    NewProjectComponent
+    NewProjectComponent,
+    BlogListItemComponent
   ],
   imports: [
     BrowserModule,

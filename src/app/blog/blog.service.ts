@@ -20,6 +20,10 @@ export class BlogService {
         return this.blogs.slice();
     }
 
+    getBlog(index: number) {
+        return this.blogs.slice()[index];
+    }
+
     addBlog(blog: Blog) {
         this.blogs.push(blog);
     }

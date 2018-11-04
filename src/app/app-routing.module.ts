@@ -1,3 +1,4 @@
+import { BlogEntryComponent } from './blog/blog-entry/blog-entry.component';
 import { NewProjectComponent } from './projects/new-project/new-project.component';
 import { ProjectListComponent } from './projects/project-list/project-list.component';
 import { NgModule } from "@angular/core";
@@ -11,6 +12,7 @@ const appRoutes: Routes = [
     { path: '', component: HomeComponent },
     { path: 'blogs', component: BlogComponent },
     { path: 'blogs/new', component: NewBlogComponent },
+    { path: 'blogs/:id', component: BlogEntryComponent },
     { path: 'projects', component: ProjectListComponent },
     { path: 'projects/new', component: NewProjectComponent },
     { path: 'cv', component: CvComponent },

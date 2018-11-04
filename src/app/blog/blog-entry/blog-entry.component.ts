@@ -1,5 +1,7 @@
-import { Component, OnInit, Input } from '@angular/core';
+import { Component, OnInit } from '@angular/core';
+import { Params, ActivatedRoute } from '@angular/router';
 import { Blog } from './../blog.model';
+import { BlogService } from './../blog.service';
 
 @Component({
     selector: 'app-blog-entry',
@@ -8,11 +10,18 @@ import { Blog } from './../blog.model';
 })
 export class BlogEntryComponent implements OnInit {
 
-    @Input() blog: Blog;
+    id: number;
+    blog: Blog;
 
-    constructor() { }
+    constructor(private route: ActivatedRoute, private blogService: BlogService) { }
 
     ngOnInit() {
+        this.route.params.subscribe(
+            (params: Params) => {
+                this.id = +params['id']
+                this.blog = this.blogService.getBlog(this.id);
+            }
+        );
     }
 
 }
