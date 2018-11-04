@@ -1,9 +1,7 @@
-<div class="container">
-    <div class="row">
-        <app-project-search-form></app-project-search-form>
-    </div>
-    <hr>
-    <div class="col-xs-12 col-md-6" *ngFor="let project of projects">
-        <app-project-list-item [listItem]="project"></app-project-list-item>
-    </div>
+<div class="col-md-10 col-md-offset-1">
+    <app-project-search-form></app-project-search-form>
+<hr>
+<div class="col-xs-12 col-md-6" *ngFor="let project of projects">
+    <app-project-list-item [listItem]="project"></app-project-list-item>
+</div>
 </div>

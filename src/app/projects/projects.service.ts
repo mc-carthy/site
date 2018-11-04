@@ -11,8 +11,8 @@ export class ProjectsService {
         ),
         new Project(
             "SuperNot",
-            "An FPS prototype exploring the time dilation mechanics of SuperHot",
-            "An FPS prototype exploring the time dilation mechanics of SuperHot",
+            "An FPS prototype built in Unity exploring the time dilation mechanics of SuperHot",
+            "An FPS prototype built in Unity exploring the time dilation mechanics of SuperHot",
             ["Unity", "C#"],
             "https://img.itch.zone/aW1hZ2UvMTM0ODEzLzYxODUyNC5qcGc=/315x250%23c/oGER74.jpg"
         ),
