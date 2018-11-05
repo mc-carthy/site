@@ -30,8 +30,8 @@
 <hr>
 
 <app-blog-list-item
-    *ngFor="let blog of blogs | filter:searchFilter:'title' | filterArray:tagFilter:'tags'; let i = index"
-    [routerLink]="['/blogs', i]" 
+    *ngFor="let blog of blogs | filter:searchFilter:'title' | filterArray:tagFilter:'tags'"
+    [routerLink]="['/blogs', blog.id]" 
     [blog]="blog"
     style="cursor: pointer;"
 ></app-blog-list-item>

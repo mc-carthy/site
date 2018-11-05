@@ -36,6 +36,7 @@ export class NewBlogComponent implements OnInit {
 
     onSubmit() {
         const blog = new Blog(
+            this.blogService.getNextBlogId(),
             this.blogForm.value['title'],
             this.blogForm.value['summary'],
             this.blogForm.value['body'],
