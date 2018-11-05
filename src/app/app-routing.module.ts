@@ -13,6 +13,7 @@ const appRoutes: Routes = [
     { path: 'blogs', component: BlogComponent },
     { path: 'blogs/new', component: NewBlogComponent },
     { path: 'blogs/:id', component: BlogEntryComponent },
+    { path: 'blogs/:id/edit', component: NewBlogComponent },
     { path: 'projects', component: ProjectListComponent },
     { path: 'projects/new', component: NewProjectComponent },
     { path: 'cv', component: CvComponent },

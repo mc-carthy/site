@@ -30,9 +30,9 @@ export class BlogService {
         return this.blogs.slice();
     }
 
-    getBlog(index: number) {
+    getBlog(id: number) {
         for (let blog of this.blogs) {
-            if (blog.id === index) {
+            if (blog.id === id) {
                 return blog;
             }
         }
@@ -41,6 +41,14 @@ export class BlogService {
 
     addBlog(blog: Blog) {
         this.blogs.push(blog);
+    }
+
+    updateBlog(updatedBlog: Blog, id: number) {
+        for (var i = 0; i < this.blogs.length; i++) {
+            if (this.blogs[i].id === id) {
+                this.blogs[i] = updatedBlog;
+            }
+        }
     }
 
     deleteBlog(index: number) {

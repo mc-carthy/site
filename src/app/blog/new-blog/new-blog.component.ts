@@ -1,6 +1,6 @@
 import { Component, OnInit } from '@angular/core';
 import { FormGroup, FormControl, FormArray } from '@angular/forms';
-import { Router } from '@angular/router';
+import { Router, ActivatedRoute, Params } from '@angular/router';
 import { BlogService } from './../blog.service';
 import { Blog } from './../blog.model';
 
@@ -12,13 +12,19 @@ import { Blog } from './../blog.model';
 export class NewBlogComponent implements OnInit {
 
     blogForm: FormGroup;
+    id: number;
     editMode = false;
-    markdownPreview = '';
 
-    constructor(private router: Router, private blogService: BlogService) { }
+    constructor(private router: Router, private route: ActivatedRoute, private blogService: BlogService) { }
 
     ngOnInit() {
-        this.initForm();
+        this.route.params.subscribe(
+            (params: Params) => {
+                this.id = +params['id'];
+                this.editMode = params['id'] != null;
+                this.initForm();
+            }
+        );
     }
 
     private initForm() {
@@ -26,6 +32,18 @@ export class NewBlogComponent implements OnInit {
         let summary = '';
         let body = '';
         let tags = '';
+
+        if (this.editMode) {
+            const blog = this.blogService.getBlog(this.id);
+            title = blog.title;
+            summary = blog.summary;
+            body = blog.body;
+            for (let tag of blog.tags) {
+                tags += tag + ',';
+            }
+            tags = tags.slice(0, -1);
+        }
+
         this.blogForm = new FormGroup({
             'title': new FormControl(title),
             'summary': new FormControl(summary),
@@ -35,16 +53,25 @@ export class NewBlogComponent implements OnInit {
     }
 
     onSubmit() {
+        let blogId: number;
+        if (this.editMode) {
+            blogId = this.id;
+        } else {
+            blogId = this.blogService.getNextBlogId();
+        }
         const blog = new Blog(
-            this.blogService.getNextBlogId(),
+            blogId,
             this.blogForm.value['title'],
             this.blogForm.value['summary'],
             this.blogForm.value['body'],
             this.blogForm.value['tags'].split(','),
             Date.now()
         );
-        console.log(this.blogForm);
-        this.blogService.addBlog(blog);
+        if (this.editMode) {
+            this.blogService.updateBlog(blog, this.id);
+        } else {
+            this.blogService.addBlog(blog);
+        }
         this.router.navigate(['/blogs']);
     }
 
