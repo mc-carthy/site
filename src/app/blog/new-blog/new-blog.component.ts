@@ -1,8 +1,10 @@
 import { Component, OnInit } from '@angular/core';
+import { Response } from '@angular/http';
 import { FormGroup, FormControl, FormArray } from '@angular/forms';
 import { Router, ActivatedRoute, Params } from '@angular/router';
-import { BlogService } from './../blog.service';
 import { Blog } from './../blog.model';
+import { BlogService } from './../blog.service';
+import { DataStorageService } from './../../database/data-storage.service';
 
 @Component({
     selector: 'app-new-blog',
@@ -15,7 +17,12 @@ export class NewBlogComponent implements OnInit {
     id: number;
     editMode = false;
 
-    constructor(private router: Router, private route: ActivatedRoute, private blogService: BlogService) { }
+    constructor(
+        private router: Router, 
+        private route: ActivatedRoute, 
+        private blogService: BlogService, 
+        private dataStorageService: DataStorageService
+    ) { }
 
     ngOnInit() {
         this.route.params.subscribe(
@@ -72,6 +79,11 @@ export class NewBlogComponent implements OnInit {
         } else {
             this.blogService.addBlog(blog);
         }
+        this.dataStorageService.putBlogs().subscribe(
+            (response: Response) => {
+                console.log(response);
+            }
+        );
         this.router.navigate(['/blogs']);
     }
 
