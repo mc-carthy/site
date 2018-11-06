@@ -1,6 +1,8 @@
+import { DataStorageService } from './database/data-storage.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
+import { HttpModule } from '@angular/http';
 import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
 
@@ -46,10 +48,15 @@ import { FilterArrayPipe } from './shared/filter-array.pipe';
     BrowserModule,
     FormsModule,
     ReactiveFormsModule,
+    HttpModule,
     MarkdownModule.forRoot(),
     AppRoutingModule
   ],
-  providers: [BlogService, ProjectsService],
+  providers: [
+      BlogService, 
+      ProjectsService,
+      DataStorageService
+    ],
   bootstrap: [AppComponent]
 })
 export class AppModule { }
