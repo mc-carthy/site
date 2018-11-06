@@ -1,6 +1,10 @@
 import { Blog } from './blog.model';
+import { Subject } from 'rxjs';
 
 export class BlogService {
+
+    blogsChanged = new Subject<Blog[]>();
+
     private blogs: Blog[] = [
         new Blog(
             0,
@@ -28,6 +32,11 @@ export class BlogService {
 
     getBlogs() {
         return this.blogs.slice();
+    }
+
+    setBlogs(blogs: Blog[]) {
+        this.blogs = blogs;
+        this.blogsChanged.next(this.blogs.slice());
     }
 
     getBlog(id: number) {
