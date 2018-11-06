@@ -14,7 +14,7 @@ import { DataStorageService } from './../../database/data-storage.service';
 export class BlogEntryComponent implements OnInit {
 
     id: number;
-    blog: Blog;
+    blog: Blog = new Blog(-1, '', '', '', [''], 0);
 
     constructor(
         private route: ActivatedRoute, 
@@ -27,7 +27,11 @@ export class BlogEntryComponent implements OnInit {
         this.route.params.subscribe(
             (params: Params) => {
                 this.id = +params['id']
-                this.blog = this.blogService.getBlog(this.id);
+                if (this.blogService.getBlog(this.id) !== null) {
+                    this.blog = this.blogService.getBlog(this.id);
+                } else {
+                    this.router.navigate(['/blogs']);
+                }
             }
         );
     }
