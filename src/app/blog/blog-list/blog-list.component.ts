@@ -22,6 +22,7 @@ export class BlogListComponent implements OnInit, OnDestroy {
     ngOnInit() {
         this.searchFilter = '';
         this.tagFilter = '';
+        this.dataStorageService.getBlogs();
         this.subscription = this.blogService.blogsChanged.subscribe(
             (blogs: Blog[]) => {
                 this.blogs = blogs;
