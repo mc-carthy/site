@@ -42,6 +42,10 @@ export class BlogListComponent implements OnInit, OnDestroy {
         this.dataStorageService.getBlogs();
     }
 
+    onLogBlogs() {
+        console.log(this.blogService.getBlogs());
+    }
+
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }
