@@ -28,7 +28,6 @@ export class BlogListComponent implements OnInit, OnDestroy {
                 this.blogs = blogs;
             }
         );
-        this.blogs = this.blogService.getBlogs();
     }
 
     onSaveBlogs() {
