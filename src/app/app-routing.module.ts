@@ -16,7 +16,7 @@ const appRoutes: Routes = [
     { path: 'blogs/:id/edit', component: NewBlogComponent },
     { path: 'projects', component: ProjectListComponent },
     { path: 'projects/new', component: NewProjectComponent },
-    { path: 'cv', component: CvComponent },
+    // { path: 'cv', component: CvComponent },
     { path: '**', redirectTo: '/' }
 ];
 
