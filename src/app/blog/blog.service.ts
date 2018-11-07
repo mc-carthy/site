@@ -8,6 +8,7 @@ export class BlogService {
     private blogs: Blog[];
 
     getBlogs() {
+        if (this.blogs === undefined) { return null }
         return this.blogs.slice();
     }
 
@@ -27,6 +28,7 @@ export class BlogService {
 
     addBlog(blog: Blog) {
         this.blogs.push(blog);
+        this.blogsChanged.next(this.blogs.slice());
     }
 
     updateBlog(updatedBlog: Blog, id: number) {
@@ -39,6 +41,7 @@ export class BlogService {
 
     deleteBlog(index: number) {
         this.blogs.splice(index, 1);
+        this.blogsChanged.next(this.blogs.slice());
     }
 
     getNextBlogId() {
