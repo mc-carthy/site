@@ -24,6 +24,8 @@ import { ProjectsService } from './projects/projects.service';
 import { BlogListItemComponent } from './blog/blog-list-item/blog-list-item.component';
 import { FilterPipe } from './shared/filter.pipe';
 import { FilterArrayPipe } from './shared/filter-array.pipe';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
 
 @NgModule({
   declarations: [
@@ -42,7 +44,9 @@ import { FilterArrayPipe } from './shared/filter-array.pipe';
     NewProjectComponent,
     BlogListItemComponent,
     FilterPipe,
-    FilterArrayPipe
+    FilterArrayPipe,
+    SignUpComponent,
+    SignInComponent
   ],
   imports: [
     BrowserModule,

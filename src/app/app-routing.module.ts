@@ -7,6 +7,8 @@ import { HomeComponent } from './home/home.component';
 import { CvComponent } from './cv/cv.component';
 import { BlogComponent } from './blog/blog.component';
 import { NewBlogComponent } from './blog/new-blog/new-blog.component';
+import { SignInComponent } from './auth/sign-in/sign-in.component';
+import { SignUpComponent } from './auth/sign-up/sign-up.component';
 
 const appRoutes: Routes = [
     { path: '', component: HomeComponent },
@@ -16,6 +18,8 @@ const appRoutes: Routes = [
     { path: 'blogs/:id/edit', component: NewBlogComponent },
     { path: 'projects', component: ProjectListComponent },
     { path: 'projects/new', component: NewProjectComponent },
+    { path: 'signup', component: SignUpComponent },
+    { path: 'signin', component: SignInComponent },
     // { path: 'cv', component: CvComponent },
     { path: '**', redirectTo: '/' }
 ];
