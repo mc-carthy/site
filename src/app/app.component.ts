@@ -11,8 +11,8 @@ export class AppComponent implements OnInit {
 
     ngOnInit() {
         firebase.initializeApp({
-            apiKey: Constants.getDbKey,
-            authDomain: Constants.getDbDom
+            apiKey: Constants.getDbKey(),
+            authDomain: Constants.getDbDom()
         });
     }
 }

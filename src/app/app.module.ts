@@ -1,10 +1,12 @@
-import { DataStorageService } from './database/data-storage.service';
 import { BrowserModule } from '@angular/platform-browser';
 import { NgModule } from '@angular/core';
 import { ReactiveFormsModule, FormsModule } from '@angular/forms';
 import { HttpModule } from '@angular/http';
 import { MarkdownModule } from 'ngx-markdown';
 import { AppRoutingModule } from './app-routing.module';
+
+import { DataStorageService } from './database/data-storage.service';
+import { AuthService } from './auth/auth.service';
 
 import { AppComponent } from './app.component';
 import { HomeComponent } from './home/home.component';
@@ -59,7 +61,8 @@ import { SignInComponent } from './auth/sign-in/sign-in.component';
   providers: [
       BlogService, 
       ProjectsService,
-      DataStorageService
+      DataStorageService,
+      AuthService
     ],
   bootstrap: [AppComponent]
 })
