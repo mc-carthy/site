@@ -15,7 +15,7 @@ a:hover {
     color: #7289a5;
 }
 
-.active {
+.active.active.active.active {
     background-color: #58c8f5;
     color: #eee;
 }
