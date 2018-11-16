@@ -18,6 +18,7 @@ export class BlogService {
     }
 
     getBlog(id: number) {
+        if (this.blogs === undefined) { return null; }
         for (let blog of this.blogs) {
             if (blog.id === id) {
                 return blog;
