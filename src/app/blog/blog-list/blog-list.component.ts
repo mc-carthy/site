@@ -1,9 +1,10 @@
 import { Component, OnInit, OnDestroy } from '@angular/core';
 import { Response } from '@angular/http';
+import { Subscription } from 'rxjs';
 import { Blog } from './../blog.model';
 import { BlogService } from './../blog.service';
 import { DataStorageService } from './../../database/data-storage.service';
-import { Subscription } from 'rxjs';
+import { AuthService } from './../../auth/auth.service';
 
 @Component({
     selector: 'app-blog-list',
@@ -17,9 +18,10 @@ export class BlogListComponent implements OnInit, OnDestroy {
     searchFilter: '';
     tagFilter: '';
 
-    constructor(private blogService: BlogService, private dataStorageService: DataStorageService) { }
+    constructor(private blogService: BlogService, private dataStorageService: DataStorageService, private authService: AuthService) { }
 
     ngOnInit() {
+        console.log(this.authService.isAuthenticated());
         this.searchFilter = '';
         this.tagFilter = '';
         if (this.blogService.getBlogs() === null) {
