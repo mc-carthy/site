@@ -1,10 +1,12 @@
 <div class="container">
-    <div class="row">
-        <div class="col-xs-12">
-            <button class="btn btn-info" routerLink="/projects/new">New Project Entry</button>
+    <div *ngIf="authService.isAuthenticated()">
+        <div class="row">
+            <div class="col-xs-12">
+                <button class="btn btn-info" routerLink="/projects/new">New Project Entry</button>
+            </div>
         </div>
+        <hr>
     </div>
-    <hr>
     <div class="row">
         <div class="form-group col-xs-12 col-sm-8">
                 <label for="tagFilter">Search by title</label>

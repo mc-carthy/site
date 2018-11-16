@@ -1,3 +1,4 @@
+import { AuthService } from './../../auth/auth.service';
 import { ProjectsService } from './../projects.service';
 import { Project } from '../project.model';
 import { Component, OnInit } from '@angular/core';
@@ -13,7 +14,7 @@ export class ProjectListComponent implements OnInit {
     searchFilter = '';
     tagFilter = '';
     
-    constructor(private projectsService: ProjectsService) { }
+    constructor(private projectsService: ProjectsService, private authService: AuthService) { }
     
     ngOnInit() {
         this.searchFilter = '';

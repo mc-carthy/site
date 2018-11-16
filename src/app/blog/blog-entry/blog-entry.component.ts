@@ -5,6 +5,7 @@ import { Subscription } from 'rxjs';
 import { Blog } from './../blog.model';
 import { BlogService } from './../blog.service';
 import { DataStorageService } from './../../database/data-storage.service';
+import { AuthService } from './../../auth/auth.service';
 
 @Component({
     selector: 'app-blog-entry',
@@ -21,7 +22,8 @@ export class BlogEntryComponent implements OnInit, OnDestroy {
         private route: ActivatedRoute, 
         private router: Router, 
         private blogService: BlogService,
-        private dataStorageService: DataStorageService
+        private dataStorageService: DataStorageService,
+        private authService: AuthService
     ) { }
 
     ngOnInit() {
