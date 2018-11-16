@@ -6,7 +6,7 @@
         </div>
         <div class="panel-footer">{{ blog.createdAt | date: 'medium' }}</div>
     </div>
-    <div *ngIf="authService.isAuthenticated()">
+    <div *ngIf="isAuthenticated()">
         <button type="button" class="btn btn-info" [routerLink]="['edit']">Edit blog entry</button>
         <button type="button" class="btn btn-danger" (click)="onDelete()">Delete blog entry</button>
     </div>

@@ -60,4 +60,8 @@ export class BlogEntryComponent implements OnInit, OnDestroy {
     ngOnDestroy() {
         this.subscription.unsubscribe();
     }
+
+    isAuthenticated() {
+        return this.authService.isAuthenticated();
+    }
 }

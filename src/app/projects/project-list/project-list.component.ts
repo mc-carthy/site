@@ -22,4 +22,8 @@ export class ProjectListComponent implements OnInit {
         this.projects = this.projectsService.getProjects();
     }
 
+    isAuthenticated() {
+        return this.authService.isAuthenticated();
+    }
+
 }

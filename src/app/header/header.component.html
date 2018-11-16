@@ -10,10 +10,10 @@
                 </ul>
             </div>
         </div>
-        <ul *ngIf="authService.isAuthenticated()" class="nav navbar-nav navbar-right">
+        <ul *ngIf="isAuthenticated()" class="nav navbar-nav navbar-right">
             <li><a style="cursor: pointer;" (click)="logout()">Log Out</a></li>
         </ul>
-        <ul *ngIf="!authService.isAuthenticated()" class="nav navbar-nav navbar-right">
+        <ul *ngIf="!isAuthenticated()" class="nav navbar-nav navbar-right">
             <li role="presentation"><a routerLink="/signin" routerLinkActive="active">Sign In</a></li>
         </ul>
     </div>
