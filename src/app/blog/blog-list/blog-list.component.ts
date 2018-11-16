@@ -21,7 +21,6 @@ export class BlogListComponent implements OnInit, OnDestroy {
     constructor(private blogService: BlogService, private dataStorageService: DataStorageService, private authService: AuthService) { }
 
     ngOnInit() {
-        console.log(this.authService.isAuthenticated());
         this.searchFilter = '';
         this.tagFilter = '';
         if (this.blogService.getBlogs() === null) {
