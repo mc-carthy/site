@@ -15,8 +15,8 @@ import { AuthService } from './../../auth/auth.service';
 export class BlogEntryComponent implements OnInit, OnDestroy {
 
     subscription: Subscription
-    id: number;
-    blog: Blog = new Blog(-1, '', '', '', [''], 0);
+    id;
+    blog: Blog = new Blog(-1, '', '', '', '', [''], 0);
 
     constructor(
         private route: ActivatedRoute, 
@@ -35,7 +35,7 @@ export class BlogEntryComponent implements OnInit, OnDestroy {
 
         this.route.params.subscribe(
             (params: Params) => {
-                this.id = +params['id']
+                this.id = params['id']
                 if (this.blogService.getBlog(this.id) !== null) {
                     this.blog = this.blogService.getBlog(this.id);
                 } else {

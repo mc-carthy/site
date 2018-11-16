@@ -1,6 +1,15 @@
 <div class="container">
     <form [formGroup]="blogForm" (ngSubmit)="onSubmit()">
         <div class="form-group">
+            <label for="friendlyUrl">Friendly URL</label>
+            <input 
+                formControlName="friendlyUrl"
+                id="friendlyUrl"
+                class="form-control" 
+                type="text" 
+            >
+        </div>
+        <div class="form-group">
             <label for="title">Blog Title</label>
             <input 
                 formControlName="title"

@@ -35,6 +35,7 @@ export class NewBlogComponent implements OnInit {
     }
 
     private initForm() {
+        let friendlyUrl = '';
         let title = '';
         let summary = '';
         let body = '';
@@ -42,6 +43,7 @@ export class NewBlogComponent implements OnInit {
 
         if (this.editMode) {
             const blog = this.blogService.getBlog(this.id);
+            friendlyUrl = blog.friendlyUrl;
             title = blog.title;
             summary = blog.summary;
             body = blog.body;
@@ -52,6 +54,7 @@ export class NewBlogComponent implements OnInit {
         }
 
         this.blogForm = new FormGroup({
+            'friendlyUrl': new FormControl(friendlyUrl),
             'title': new FormControl(title),
             'summary': new FormControl(summary),
             'body': new FormControl(body),
@@ -68,6 +71,7 @@ export class NewBlogComponent implements OnInit {
         }
         const blog = new Blog(
             blogId,
+            this.blogForm.value['friendlyUrl'],
             this.blogForm.value['title'],
             this.blogForm.value['summary'],
             this.blogForm.value['body'],

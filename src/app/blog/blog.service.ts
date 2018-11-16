@@ -1,7 +1,12 @@
-import { Blog } from './blog.model';
+import { Injectable } from '@angular/core';
+import { Router } from '@angular/router';
 import { Subject } from 'rxjs';
+import { Blog } from './blog.model';
 
+@Injectable()
 export class BlogService {
+
+    constructor(private router: Router) {}
 
     blogsChanged = new Subject<Blog[]>();
 
@@ -17,14 +22,14 @@ export class BlogService {
         this.blogsChanged.next(this.blogs.slice());
     }
 
-    getBlog(id: number) {
+    getBlog(id) {
         if (this.blogs === undefined) { return null; }
         for (let blog of this.blogs) {
-            if (blog.id === id) {
+            if (blog.friendlyUrl === id || blog.id === +id) {
                 return blog;
             }
         }
-        return null;
+        this.router.navigate(['/blogs'])
     }
 
     addBlog(blog: Blog) {
