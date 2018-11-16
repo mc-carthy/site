@@ -1,3 +1,4 @@
+import { AuthService } from './../auth/auth.service';
 import { BlogService } from './../blog/blog.service';
 import { Injectable } from "@angular/core";
 import { Http, Response } from "@angular/http";
@@ -8,7 +9,7 @@ import { map } from 'rxjs/operators';
 @Injectable()
 export class DataStorageService {
 
-    constructor (private http: Http, private blogService: BlogService) {
+    constructor (private http: Http, private blogService: BlogService, private authService: AuthService) {
 
     }
 
@@ -42,6 +43,7 @@ export class DataStorageService {
     }
 
     putBlogs() {
-        return this.http.put(Constants.getDbUrl() + 'blogs.json', this.blogService.getBlogs());
+        const token = this.authService.getToken()
+        return this.http.put(Constants.getDbUrl() + 'blogs.json?auth=' + token, this.blogService.getBlogs());
     }
 }
