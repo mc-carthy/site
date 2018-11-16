@@ -14,7 +14,7 @@ import { DataStorageService } from './../../database/data-storage.service';
 export class NewBlogComponent implements OnInit {
 
     blogForm: FormGroup;
-    id: number;
+    id;
     editMode = false;
 
     constructor(
@@ -27,7 +27,7 @@ export class NewBlogComponent implements OnInit {
     ngOnInit() {
         this.route.params.subscribe(
             (params: Params) => {
-                this.id = +params['id'];
+                this.id = params['id'];
                 this.editMode = params['id'] != null;
                 this.initForm();
             }
