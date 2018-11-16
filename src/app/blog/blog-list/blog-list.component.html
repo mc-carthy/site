@@ -36,7 +36,7 @@
 
 <app-blog-list-item
     *ngFor="let blog of blogs | filter:searchFilter:'title' | filterArray:tagFilter:'tags'"
-    [routerLink]="['/blogs', blog.id]" 
+    [routerLink]="['/blogs', blog.friendlyUrl]" 
     [blog]="blog"
     style="cursor: pointer;"
 ></app-blog-list-item>
