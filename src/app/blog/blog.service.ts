@@ -41,9 +41,9 @@ export class BlogService {
         this.blogsChanged.next(this.blogs.slice());
     }
 
-    updateBlog(updatedBlog: Blog, id: number) {
+    updateBlog(updatedBlog: Blog, id) {
         for (var i = 0; i < this.blogs.length; i++) {
-            if (this.blogs[i].id === id) {
+            if (this.blogs[i].id === id || this.blogs[i].friendlyUrl === id) {
                 this.blogs[i] = updatedBlog;
             }
         }
