@@ -2,3 +2,13 @@ ul {
     padding: 0 0;
     margin: 0 0;
 }
+
+.navbar-toggle {
+    color: #eee;
+    border: 2px solid #eee;
+}
+
+a.navbar-brand:hover {
+    background-color: #eee;
+    color: #7289a5;
+}

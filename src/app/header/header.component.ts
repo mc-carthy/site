@@ -8,6 +8,8 @@ import { AuthService } from './../auth/auth.service';
 })
 export class HeaderComponent implements OnInit {
 
+    expandNavbar = false;
+
     constructor(private authService: AuthService) { }
 
     ngOnInit() {
@@ -19,6 +21,10 @@ export class HeaderComponent implements OnInit {
 
     isAuthenticated() {
         return this.authService.isAuthenticated();
+    }
+
+    onToggle() {
+        this.expandNavbar = !this.expandNavbar;
     }
 
 }
