@@ -69,3 +69,7 @@ footer {
     background-color: #536274;
     color: #ddd;
 }
+
+markdown > p > img {
+    max-width: 100%;
+}
